@@ -25,10 +25,10 @@
 Общую архитектуру взаимодействия сервисов можно посмотреть на схеме `notification_architecture_celery.drawio.png`, ее можно найти в папке `./architecture`
 
 В данном спринте реализованы:
-- сервис [user_preference](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/user-preferences) для хранения настроек подписок пользователя
-- сервис [notify_service](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/notify_service) для управления уведомлениями и их отправкой
-- интеграция [notify_service](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/notify_service) с [Auth service](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/Auth_service) сервисом (запрос пользовательской информации)
-- интеграция [notify_service](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/notify_service) с [user preference](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/user-preferences) сервисом (запрос пользовательских настроек по подпискам)
+- сервис [user_preference](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/user-preferences) для хранения настроек подписок пользователя
+- сервис [notify_service](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/notify_service) для управления уведомлениями и их отправкой
+- интеграция [notify_service](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/notify_service) с [Auth service](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/Auth_service) сервисом (запрос пользовательской информации)
+- интеграция [notify_service](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/notify_service) с [user preference](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/user-preferences) сервисом (запрос пользовательских настроек по подпискам)
 
 ## Запуск
 
