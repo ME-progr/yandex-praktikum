@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "e0009025-93c4-4e7b-aace-bd0bdde0f989",
+		"name": "billing_pipeline",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14261756"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"anton\",\n    \"password\": \"password\",\n    \"email\": \"arti-anton@yandex.ru\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1/auth/api/v1/account/signup",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"auth",
+						"api",
+						"v1",
+						"account",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "guest_pc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"anton\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1/auth/api/v1/account/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"auth",
+						"api",
+						"v1",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "guest_pc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"admin\",\n    \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1/auth/api/v1/account/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"auth",
+						"api",
+						"v1",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create sibscribe",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjg0NTA5MzkzLCJqdGkiOiIzNGVjMDczMS00NTI0LTQxOGMtYTRlMS1kOTM2ODU3ZmU2NTUiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjp7InVzZXJfaWQiOiI1M2NhNGQ0YS04MzdiLTQzNjItYmUwZS1kNGU0OWRiNDM5ZGUiLCJ1c2VyX3JvbGVzIjpbInVzZXIiXSwidXNlcl9hZ2VudCI6Imd1ZXN0X3BjIiwiZW1haWwiOiJhcnRpLWFudG9uQHlhbmRleC5ydSIsInJlZnJlc2hfanRpIjoiZDc2Nzg4NjktNTEzOS00OWNiLTg2OWEtODlmNDM5MGMwNzQ4In0sIm5iZiI6MTY4NDUwOTM5MywiZXhwIjoxNjg0NTE2NTkzfQ.usg40w7r5gGmJRauk_XOh12QT02AyhZ-FEjvdSXKGgQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subscribe_type\": \"SU\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/billing/api/v1/create-subscribe/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"billing",
+						"api",
+						"v1",
+						"create-subscribe",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel subscribe",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjg0MDg4MTkzLCJqdGkiOiI5NmZiNGQzNi1iNzc5LTQ4NjAtOGJhZC02M2FlYjFlODYwNGYiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjp7InVzZXJfaWQiOiIwYjQ4MTBjZi05Zjk1LTQyZTctOWMxYS0xYjdhYWQwM2FjZTIiLCJ1c2VyX3JvbGVzIjpbInVzZXIiXSwidXNlcl9hZ2VudCI6Imd1ZXN0X3BjIiwiZW1haWwiOiJhcnRpLWFudG9uQHlhbmRleC5ydSIsInJlZnJlc2hfanRpIjoiODJmNDMwNTQtZmYyZS00NTRlLThmM2MtNjFmNzYzMWQyM2I4In0sIm5iZiI6MTY4NDA4ODE5MywiZXhwIjoxNjg0MDk1MzkzfQ.MeS2XN0OV9nXXBHM1ZheBPzMsZ8KKzdC8Of1yoB9uxI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subscribe_type\": \"SU\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/billing/api/v1/cancel-subscribe/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"billing",
+						"api",
+						"v1",
+						"cancel-subscribe",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth roles",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "add auth user role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjg0NDM0ODI1LCJqdGkiOiI5NWEyZTliMy05NDE3LTQyYmUtYmI4NC1iMzA1MWFmYmNhNmEiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjp7InVzZXJfaWQiOiJjYjI3MWQ5NC0yNzNhLTQwYzItYTg2MC03MjU3MmNlNGJlY2MiLCJ1c2VyX3JvbGVzIjpbImFkbWluIl0sInVzZXJfYWdlbnQiOiJndWVzdF9wYyIsImVtYWlsIjoiYWRtaW4iLCJyZWZyZXNoX2p0aSI6ImZiNDA0MWQxLTMzYWItNDU5ZS04NzExLTA0ZjZkNGM4ODNjOSJ9LCJuYmYiOjE2ODQ0MzQ4MjV9.Yhx_YURfjfX6FVFXK2G2L2XDaAVWOVFmoMv9f9scSU0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"roles\": [\"subscriber\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1/auth/api/v1/users/ad39cd68-3131-4843-ba42-f250edeb4cab/roles/create",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"auth",
+						"api",
+						"v1",
+						"users",
+						"ad39cd68-3131-4843-ba42-f250edeb4cab",
+						"roles",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete auth user role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjg0NDM0ODI1LCJqdGkiOiI5NWEyZTliMy05NDE3LTQyYmUtYmI4NC1iMzA1MWFmYmNhNmEiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjp7InVzZXJfaWQiOiJjYjI3MWQ5NC0yNzNhLTQwYzItYTg2MC03MjU3MmNlNGJlY2MiLCJ1c2VyX3JvbGVzIjpbImFkbWluIl0sInVzZXJfYWdlbnQiOiJndWVzdF9wYyIsImVtYWlsIjoiYWRtaW4iLCJyZWZyZXNoX2p0aSI6ImZiNDA0MWQxLTMzYWItNDU5ZS04NzExLTA0ZjZkNGM4ODNjOSJ9LCJuYmYiOjE2ODQ0MzQ4MjV9.Yhx_YURfjfX6FVFXK2G2L2XDaAVWOVFmoMv9f9scSU0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1/auth/api/v1/users/95298d6c-ba12-499b-b088-1dadaa6e8571/roles/delete?roles=subscriber",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"auth",
+						"api",
+						"v1",
+						"users",
+						"95298d6c-ba12-499b-b088-1dadaa6e8571",
+						"roles",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "roles",
+							"value": "subscriber"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth user roles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjg0NTA5MzkzLCJqdGkiOiIzNGVjMDczMS00NTI0LTQxOGMtYTRlMS1kOTM2ODU3ZmU2NTUiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjp7InVzZXJfaWQiOiI1M2NhNGQ0YS04MzdiLTQzNjItYmUwZS1kNGU0OWRiNDM5ZGUiLCJ1c2VyX3JvbGVzIjpbInVzZXIiXSwidXNlcl9hZ2VudCI6Imd1ZXN0X3BjIiwiZW1haWwiOiJhcnRpLWFudG9uQHlhbmRleC5ydSIsInJlZnJlc2hfanRpIjoiZDc2Nzg4NjktNTEzOS00OWNiLTg2OWEtODlmNDM5MGMwNzQ4In0sIm5iZiI6MTY4NDUwOTM5MywiZXhwIjoxNjg0NTE2NTkzfQ.usg40w7r5gGmJRauk_XOh12QT02AyhZ-FEjvdSXKGgQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1/auth/api/v1/users/53ca4d4a-837b-4362-be0e-d4e49db439de/roles/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"auth",
+						"api",
+						"v1",
+						"users",
+						"53ca4d4a-837b-4362-be0e-d4e49db439de",
+						"roles",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+  auth_database:
+    image: postgres:13.0
+    restart: always
+    volumes:
+      - auth_postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - docker_app/config/auth/.env.prod.db
+    command: -p 6432
+    ports:
+      - 6432:6432
+
+  auth_service:
+    image: mikhailkushnerev/auth-service:v1.0.4
+    depends_on:
+      - auth_database
+      - auth_redis
+      - refresh_auth_redis
+    ports:
+      - 5100:5100
+    env_file:
+      - docker_app/config/auth/.env.prod.dev
+
+  auth_redis:
+    image: redis:latest
+    restart: always
+    command: --port 6381
+    ports:
+      - 6381:6381
+    env_file:
+      - docker_app/config/auth/.env.prod.dev
+
+
+  oauth_redis:
+    image: redis:latest
+    restart: always
+    command: --port 6383
+    ports:
+      - 6383:6383
+    env_file:
+      - docker_app/config/auth/.env.prod.dev
+
+  refresh_auth_redis:
+    image: redis:latest
+    restart: always
+    command: --port 6380
+    ports:
+      - 6380:6380
+    env_file:
+      - docker_app/config/auth/.env.prod.dev
+
+  auth_test:
+    build:
+      context: tests/functional
+      dockerfile: Dockerfile
+    depends_on:
+      - auth_service
+    env_file:
+      - docker_app/config/auth/.env.prod.dev
+
+
+volumes:
+  auth_postgres_data:
+  static_volume:
+  media_volume:

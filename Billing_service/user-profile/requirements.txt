@@ -1,0 +1,11 @@
+backoff==2.2.1
+fastapi==0.95.2
+gunicorn==20.1.0
+motor==3.1.1
+orjson==3.8.8
+pydantic==1.10.4
+PyJWT==2.6.0
+python-dotenv==0.21.0
+pymongo==4.3.3
+redis==4.5.5
+uvicorn==0.21.1

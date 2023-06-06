@@ -1,0 +1,19 @@
+"""
+Модуль объектов документации swagger.
+Создано автоматически модулем `creating_api_documentations.py`
+"""
+
+WRITE_FILM_FRAME_DESCRIPTION = """&emsp;Ручка сохраняет момент, на котором в данный момент находится пользователь при просмотре фильма.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br>&emsp;&emsp;- film_frame: момент, на котором остановился пользователь<br>&emsp;`Returns`:<br>&emsp;&emsp;- HTTPStatus<br>  """
+SET_FILM_USER_RATING_DESCRIPTION = """&emsp;Ручка присваивает пользовательский рейтинг заданному фильму.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br>&emsp;&emsp;- body: тело запроса<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- IdResponse<br>  """
+GET_FILM_USER_RATING_DESCRIPTION = """&emsp;Ручка получает рейтинг пользователя для заданного фильма.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- FilmRating<br>  """
+UPDATE_FILM_USER_RATING_DESCRIPTION = """&emsp;Ручка обновляет пользовательский рейтинг для заданного фильма.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br>&emsp;&emsp;- body: тело запроса<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- UpdatedRatingResponse<br>  """
+DELETE_FILM_USER_RATING_DESCRIPTION = """&emsp;Ручка удяляет пользовательский рейтинг для заданного фильма.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- Response<br>  """
+GET_AVERAGE_FILM_RATING_DESCRIPTION = """&emsp;Ручка получает средний пользовательский рейтинг для фильма.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- AverageRating<br>  """
+CREATE_FILM_USER_REVIEW_DESCRIPTION = """&emsp;Ручка позволяет пользователю оставить отзыв на конкретный фильм.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br>&emsp;&emsp;- body: тело запроса<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- IdResponse<br>  """
+GET_FILM_USER_REVIEW_DESCRIPTION = """&emsp;Ручка получает отзыв пользователя для заданного фильма.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- ReviewResponse<br>  """
+UPDATE_FILM_USER_REVIEW_DESCRIPTION = """&emsp;Ручка получает рейтинг пользователя для заданного фильма.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br>&emsp;&emsp;- body: тело запроса<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- UpdatedReview<br>  """
+DELETE_FILM_USER_REVIEW_DESCRIPTION = """&emsp;Ручка удаляет пользовательский отзыв для заданного фильма.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- Response<br>  """
+GET_FILM_REVIEWS_DESCRIPTION = """&emsp;Ручка получает список пользовательских отзывов для фильма.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br>&emsp;&emsp;- sort: сортировка по полю<br>&emsp;&emsp;- limit: количество результатов на одной странице<br>&emsp;&emsp;- page: номер страницы<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- ListResponse<br>  """
+ADD_FILM_TO_USER_BOOKMARKS_DESCRIPTION = """&emsp;Ручка позволяет пользователю добавить фильм в закладки.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- body: тело запроса<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- IdResponse<br>  """
+DELETE_FILM_FROM_USER_BOOKMARKS_DESCRIPTION = """&emsp;Ручка позволяет пользователю удалить фильм из закладок.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- film_id: идентификатор фильма<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- Response<br>  """
+GET_USER_BOOKMARKS_DESCRIPTION = """&emsp;Ручка получает список пользовательских закладок.<br><br>&emsp;`Args`:<br>&emsp;&emsp;- sort: сортировка по полю<br>&emsp;&emsp;- limit: количество результатов на одной странице<br>&emsp;&emsp;- page: номер страницы<br><br>&emsp;`Returns`:<br>&emsp;&emsp;- UserBookmarkListResponse<br>  """

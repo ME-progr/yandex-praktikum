@@ -1,0 +1,13 @@
+# Сервис user-profiles
+
+Данный сервис предназначен для работы c профилями пользователей.
+Исходя из задач, реализована работа с купленными пользователем фильмами.
+
+API предоставляет возможность добавлять, удалять купленные пользователем фильмы,
+и предоставлять список всех купленных пользователем фильмов.
+
+Запуск этого сервиса осущетсвляется в совокупности со всеми остальными.
+Подробнее можно прочесть в README в корне проекта.
+
+Админский токен с долгим времени жизни:<br>
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjc5NzM1ODI5LCJqdGkiOiJiODRkZDA2Zi03MDMxLTRmZTQtOTA4OC1lZDIxMzcwYjkyNjgiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjp7InVzZXJfaWQiOiJkZmM3Y2I3YS0yNTlhLTQ2MDktYmU0NS0wODdkMzA5ZDU0NWMiLCJ1c2VyX3JvbGVzIjpbImFkbWluIl0sInVzZXJfYWdlbnQiOiJtb2JpbGUiLCJyZWZyZXNoX2p0aSI6IjljZDdhZWVlLWMzOTMtNGQ3NC1iMGU2LWUyZTZiMDg0ZWE1MCJ9LCJuYmYiOjE2Nzk3MzU4MjksImV4cCI6MTY5OTc0MzAyOX0.O0NKadc56ias5eqU6Dm_EHAvZLE0ZytKfVXZo_OQtaU

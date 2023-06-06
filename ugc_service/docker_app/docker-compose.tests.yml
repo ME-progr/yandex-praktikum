@@ -1,0 +1,112 @@
+version: '3'
+
+services:
+  zookeeper:
+    image: zookeeper:3.5
+    container_name: zookeeper
+    hostname: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "22181:2181"
+
+  broker:
+    image: confluentinc/cp-kafka:7.3.2
+    container_name: broker
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,DOCKER:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://broker:9092,EXTERNAL://broker:29092,DOCKER://broker:39092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+
+  clickhouse-node1:
+    image: yandex/clickhouse-server:latest
+    container_name: clickhouse-node1
+    hostname: clickhouse-node1
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - ./data/node1:/etc/clickhouse-server
+    depends_on:
+      - zookeeper
+
+  clickhouse-node2:
+    image: yandex/clickhouse-server:latest
+    container_name: clickhouse-node2
+    hostname: clickhouse-node2
+    volumes:
+      - ./data/node2:/etc/clickhouse-server
+    depends_on:
+      - zookeeper
+
+  clickhouse-node3:
+    image: yandex/clickhouse-server:latest
+    container_name: clickhouse-node3
+    hostname: clickhouse-node3
+    volumes:
+      - ./data/node3:/etc/clickhouse-server
+    depends_on:
+      - zookeeper
+
+  clickhouse-node4:
+    image: yandex/clickhouse-server:latest
+    container_name: clickhouse-node4
+    hostname: clickhouse-node4
+    volumes:
+      - ./data/node4:/etc/clickhouse-server
+    depends_on:
+      - zookeeper
+
+  redis:
+    image: redis:latest
+    command: --port 6378
+    ports:
+      - 6378:6378
+
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_DATABASE=ugc
+      - MONGO_INITDB_ROOT_USERNAME=ugc_admin
+      - MONGO_INITDB_ROOT_PASSWORD=ugc_admin
+    ports:
+      - 27017:27017
+    volumes:
+      - ./config/ugc_fastapi_project/mongodb_config/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - mongodb_volume:/data/db
+
+  ugc_service:
+    image: mikhailkushnerev/ugc-service:v1.0.1
+    depends_on:
+      - zookeeper
+      - broker
+      - clickhouse-node1
+      - clickhouse-node2
+      - clickhouse-node3
+      - clickhouse-node4
+      - mongodb_container
+      - redis
+    ports:
+      - 8101:8101
+    env_file:
+      - ./config/ugc_fastapi_project/.env.prod
+
+  tests:
+    image: mikhailkushnerev/ugc-tests:v1.0.1
+    depends_on:
+      - ugc_service
+    env_file:
+      - ./config/ugc_functional_tests/.env.prod
+
+volumes:
+  mongodb_volume:
