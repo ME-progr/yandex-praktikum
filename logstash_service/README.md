@@ -2,7 +2,7 @@
 
 В рамках текущего репозитория был реализован отдельный сервис ELK, который запускается в своем `docker compose`.
 
-Все остальные задания спринта (ручки для пользовательского контента, ci/cd и анализ базы данных mongo реализованы в репозитории [ugc service](https://github.com/ME-progr/ugc_service))
+Все остальные задания спринта (ручки для пользовательского контента, ci/cd и анализ базы данных mongo реализованы в репозитории [ugc service](https://github.com/ME-progr/yandex-praktikum/tree/main/Ugc_service))
 
 Для запуска контейнеров необходимо: 
 1. Иметь работающий `Docker engine`
@@ -10,7 +10,7 @@
 3. Запустить контейнеры командой `docker-compose -f docker-compose.yml up -d --build`
 
 Чтобы отслеживать логи приложения, необходимо запустить сервисы, в которых настроена передача логов в `logstash`: 
-- Например, [ugc service](https://github.com/ME-progr/ugc_service).
+- Например, [ugc service](https://github.com/ME-progr/yandex-praktikum/tree/main/Ugc_service).
 
 Для этого проделайте все операции из README.md в разделе **Запуск**.
 
