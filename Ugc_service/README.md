@@ -7,7 +7,7 @@
  - [Илья](https://github.com/Bexram)
 
 В рамках текущего спринта было реализовано несколько задач:
-1) Был произведен сравнительный анализ двух колоночных баз данных: Vertica и Clickhouse. Произведен анализ докумнетоориентированной базы MongoDB. Результаты исследования можно посмотреть, если перейти из корня проекта в папку: /storages_research/research_results. В файле [tests.logs](https://github.com/ME-progr/yandex-praktikum/blob/main/ugc_service/storages_research/research_results/tests.logs) можно увидеть результаты выполнения нескольких тестов. Также в этой папке можно посмотреть графическую интерпритацию результатов. Сам анализ произведен в [README](https://github.com/ME-progr/yandex-praktikum/blob/main/ugc_service/storages_research/README.md) файле. 
+1) Был произведен сравнительный анализ двух колоночных баз данных: Vertica и Clickhouse. Произведен анализ докумнетоориентированной базы MongoDB. Результаты исследования можно посмотреть, если перейти из корня проекта в папку: /storages_research/research_results. В файле [tests.logs](https://github.com/ME-progr/yandex-praktikum/blob/main/Ugc_service/storages_research/research_results/tests.logs) можно увидеть результаты выполнения нескольких тестов. Также в этой папке можно посмотреть графическую интерпритацию результатов. Сам анализ произведен в [README](https://github.com/ME-progr/yandex-praktikum/blob/main/Ugc_service/storages_research/README.md) файле. 
 2) Реализован сервис UGC для работы с клиентскими событиями и контентом. Схему можно посмотреть на [diagrams.net](https://app.diagrams.net/#G1p3ByXTYNoDsIPpHmOoWbEr1nSTl_YSkd). Реализован ETL процесс, который перегоняет события из Kafka в Clickhouse
 
 Реализованы следующий ручки:
