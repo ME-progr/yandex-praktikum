@@ -28,7 +28,7 @@
 - сервис [user_preference](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/user-preferences) для хранения настроек подписок пользователя
 - сервис [notify_service](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/notify_service) для управления уведомлениями и их отправкой
 - интеграция [notify_service](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/notify_service) с [Auth service](https://github.com/ME-progr/yandex-praktikum/tree/main/Auth_service) сервисом (запрос пользовательской информации)
-- интеграция [notify_service](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/notify_service) с [user preference](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/user-preferences) сервисом (запрос пользовательских настроек по подпискам)
+- интеграция [notify_service](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/notify_service) с [user preferences](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/user-preferences) сервисом (запрос пользовательских настроек по подпискам)
 
 ## Запуск
 
@@ -50,8 +50,8 @@
 
 ## Список доступных урлов
 
-  1) [Swagger](http://127.0.0.1/api/openapi) сервиса [user_preference](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/user-preferences). Для проверки API можно использовать токены ниже. Идентификатор пользователей можно получить из токена на сайте [JWT](https://jwt.io/) 
-  2) [Django админ панель](http://127.0.0.1:80/admin/) сервиса [notify_service](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/notify_service).
+  1) [Swagger](http://127.0.0.1/api/openapi) сервиса [user_preferences](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/user-preferences). Для проверки API можно использовать токены ниже. Идентификатор пользователей можно получить из токена на сайте [JWT](https://jwt.io/) 
+  2) [Django админ панель](http://127.0.0.1:80/admin/) сервиса [notify_service](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/notify_service).
 
 <p align="right"><a href="#readme-top">вверх</a></p>
 
@@ -66,7 +66,7 @@
 
    #### Администрирование Django в [админ панели](http://127.0.0.1:80/admin/):
    - для начала работы необходимо завести типы уведомлений. (пример значения поля "слаг": `auth`, `top_film`) и задать им шаблон <br>
-     **[В сервисе нотификации](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/notify_service) мы можем работать и создавать любые типы уведомлений, с любым слагом, но у нас есть сервис [user_preference](https://github.com/ME-progr/yandex-praktikum/Notifications_service/tree/main/user-preferences), которы  позволяет пользователям подписываться и отписываться от определенных типов событий. Поэтому для проверки работоспособности сервиса лучше завести два типа уведомлений: auth (одиночное уведомление) и top_film (групповое уведомление)**
+     **[В сервисе нотификации](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/notify_service) мы можем работать и создавать любые типы уведомлений, с любым слагом, но у нас есть сервис [user_preferences](https://github.com/ME-progr/yandex-praktikum/tree/main/Notifications_service/user-preferences), которы  позволяет пользователям подписываться и отписываться от определенных типов событий. Поэтому для проверки работоспособности сервиса лучше завести два типа уведомлений: auth (одиночное уведомление) и top_film (групповое уведомление)**
      - подразумевается, что слаги типов уведомлений синхронизированы с другими сервисами
      - для просмотра типов уведомлений необходимо перейти во вкладку `Типы уведомлений`
      - для добавления нового типа уведомления необходимо нажать на `+ Добавить` слева, напротив вкладки `Типы уведомлений`
